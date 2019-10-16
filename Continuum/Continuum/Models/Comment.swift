@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 class Comment {
     let text: String
@@ -17,5 +18,11 @@ class Comment {
         self.text = text
         self.timestamp = timestamp
         self.post = post
+    }
+}
+
+extension Comment: SearchableRecord {
+    func matches(searchTerm: String) -> Bool {
+        return text.contains(searchTerm)
     }
 }

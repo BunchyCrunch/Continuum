@@ -20,6 +20,8 @@
 		FC1323E42356595B00E7F52C /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1323E32356595B00E7F52C /* PostController.swift */; };
 		FC1323E723565FF200E7F52C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC1323E623565FF100E7F52C /* Default-568h@2x.png */; };
 		FC1323E92356617300E7F52C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1323E82356617300E7F52C /* PostTableViewCell.swift */; };
+		FC1AE1572357A96200FD664E /* SearchableRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AE1562357A96100FD664E /* SearchableRecord.swift */; };
+		FC1AE1592357BD6B00FD664E /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1AE1582357BD6B00FD664E /* PhotoSelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		FC1323E32356595B00E7F52C /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		FC1323E623565FF100E7F52C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FC1323E82356617300E7F52C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		FC1AE1562357A96100FD664E /* SearchableRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableRecord.swift; sourceTree = "<group>"; };
+		FC1AE1582357BD6B00FD664E /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 				FC1323D4235652B500E7F52C /* PostListTableViewController.swift */,
 				FC1323D82356531800E7F52C /* PostDetailTableViewController.swift */,
 				FC1323DA235653AE00E7F52C /* AddPostTableViewController.swift */,
+				FC1AE1582357BD6B00FD664E /* PhotoSelectorViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 		FC1323E0235653F700E7F52C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC1AE1562357A96100FD664E /* SearchableRecord.swift */,
 				FC1323DE235653F400E7F52C /* Post.swift */,
 				FC1323E1235658C400E7F52C /* Comment.swift */,
 			);
@@ -224,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC1AE1572357A96200FD664E /* SearchableRecord.swift in Sources */,
 				FC1323D5235652B500E7F52C /* PostListTableViewController.swift in Sources */,
+				FC1AE1592357BD6B00FD664E /* PhotoSelectorViewController.swift in Sources */,
 				FC1323E42356595B00E7F52C /* PostController.swift in Sources */,
 				FC1323DB235653AE00E7F52C /* AddPostTableViewController.swift in Sources */,
 				FC1323BE235642EF00E7F52C /* AppDelegate.swift in Sources */,

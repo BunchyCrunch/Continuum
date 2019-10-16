@@ -42,26 +42,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="usm-xZ-ttx">
-                                                    <rect key="frame" x="20" y="11" width="374" height="217"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yS4-dt-h3b">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
-                                                    <state key="normal" title="Button"/>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYt-jb-A6P">
+                                                    <rect key="frame" x="88" y="0.0" width="239" height="239"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="pYt-jb-A6P" secondAttribute="height" id="gXd-xC-aje"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="addPhotoButtonTapped:" destination="6Cp-3x-Hzd" eventType="touchUpInside" id="0xy-gC-6Sp"/>
+                                                        <segue destination="T7C-vJ-Gwi" kind="embed" identifier="toPhotoSelectorVC" id="UlC-V1-eXK"/>
                                                     </connections>
-                                                </button>
+                                                </containerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="usm-xZ-ttx" secondAttribute="trailing" id="BC6-dk-Krr"/>
-                                                <constraint firstAttribute="bottom" secondItem="yS4-dt-h3b" secondAttribute="bottom" id="F1v-A1-bbS"/>
-                                                <constraint firstItem="usm-xZ-ttx" firstAttribute="top" secondItem="Msd-zQ-YHb" secondAttribute="topMargin" id="Js0-gM-Cyk"/>
-                                                <constraint firstAttribute="trailing" secondItem="yS4-dt-h3b" secondAttribute="trailing" id="Nrz-tC-KZ0"/>
-                                                <constraint firstItem="yS4-dt-h3b" firstAttribute="top" secondItem="Msd-zQ-YHb" secondAttribute="top" id="YJH-jy-HX1"/>
-                                                <constraint firstItem="usm-xZ-ttx" firstAttribute="leading" secondItem="Msd-zQ-YHb" secondAttribute="leadingMargin" id="aKW-EG-eZx"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="usm-xZ-ttx" secondAttribute="bottom" id="h59-cg-LiB"/>
-                                                <constraint firstItem="yS4-dt-h3b" firstAttribute="leading" secondItem="Msd-zQ-YHb" secondAttribute="leading" id="jnU-Yj-utN"/>
+                                                <constraint firstItem="pYt-jb-A6P" firstAttribute="height" secondItem="Msd-zQ-YHb" secondAttribute="height" id="eNz-Jq-lF1"/>
+                                                <constraint firstItem="pYt-jb-A6P" firstAttribute="centerY" secondItem="Msd-zQ-YHb" secondAttribute="centerY" id="h3P-Sz-jFy"/>
+                                                <constraint firstItem="pYt-jb-A6P" firstAttribute="centerX" secondItem="Msd-zQ-YHb" secondAttribute="centerX" id="qX6-Qs-O4z"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -128,14 +122,12 @@
                     <navigationItem key="navigationItem" id="4yg-0g-AqF">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Aib-eH-e5q">
                             <connections>
-                                <action selector="cancelButtonTapped:" destination="6Cp-3x-Hzd" id="FBh-LV-sbS"/>
+                                <action selector="cancelButtonTapped:" destination="6Cp-3x-Hzd" id="7Iu-Rk-OaM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="captionTextField" destination="qoj-1t-FFK" id="gAq-NQ-op9"/>
-                        <outlet property="photoImageView" destination="usm-xZ-ttx" id="fbG-ME-bNO"/>
-                        <outlet property="selectPhotoButton" destination="yS4-dt-h3b" id="bxt-Tv-ctk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR9-9I-pp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,9 +142,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="YKK-lC-VXJ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="480" id="gEF-8c-XEG" customClass="PostTableViewCell" customModule="Continuum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="480"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="480"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEF-8c-XEG" id="KLk-89-AM2">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="480"/>
@@ -205,6 +202,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vl4-bV-z9v"/>
+                    <connections>
+                        <outlet property="searchBar" destination="YKK-lC-VXJ" id="OHc-9X-KDK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slh-9b-Aab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,6 +348,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLy-ao-34n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="421.73913043478262" y="345.53571428571428"/>
+        </scene>
+        <!--Photo Selector View Controller-->
+        <scene sceneID="GEQ-np-ZL8">
+            <objects>
+                <viewController id="T7C-vJ-Gwi" customClass="PhotoSelectorViewController" customModule="Continuum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5e-ln-qI2">
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="239"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="znu-yL-H7e">
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="239"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-u9-xXC">
+                                <rect key="frame" x="0.0" y="0.0" width="239" height="239"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped:" destination="T7C-vJ-Gwi" eventType="touchUpInside" id="SaK-F5-Sye"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="znu-yL-H7e" firstAttribute="top" secondItem="I5e-ln-qI2" secondAttribute="top" id="Cvk-gq-t7Y"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ezg-u9-xXC" secondAttribute="bottom" id="GYD-WV-W6z"/>
+                            <constraint firstAttribute="bottom" secondItem="znu-yL-H7e" secondAttribute="bottom" id="Qce-st-GWP"/>
+                            <constraint firstItem="ezg-u9-xXC" firstAttribute="top" secondItem="I5e-ln-qI2" secondAttribute="top" id="Qfu-qt-Pu3"/>
+                            <constraint firstItem="ezg-u9-xXC" firstAttribute="leading" secondItem="I5e-ln-qI2" secondAttribute="leading" id="TkV-kw-rVc"/>
+                            <constraint firstItem="znu-yL-H7e" firstAttribute="leading" secondItem="I5e-ln-qI2" secondAttribute="leading" id="Uaa-eR-5XC"/>
+                            <constraint firstAttribute="trailing" secondItem="ezg-u9-xXC" secondAttribute="trailing" id="Urh-Xa-PsK"/>
+                            <constraint firstAttribute="trailing" secondItem="znu-yL-H7e" secondAttribute="trailing" id="nIo-h8-7fo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="znu-yL-H7e" id="DOm-nU-f1P"/>
+                        <outlet property="selectPhotoButton" destination="ezg-u9-xXC" id="8BT-g9-Pk6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7QF-UD-1mx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2075" y="229"/>
         </scene>
     </scenes>
 </document>
