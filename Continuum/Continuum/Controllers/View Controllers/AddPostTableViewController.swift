@@ -43,7 +43,9 @@ class AddPostTableViewController: UITableViewController {
         guard let photo = selectedImage,
             let caption = captionTextField.text else { return }
         PostController.shared.createPostWith(photo: photo, caption: caption) { (post) in
-            self.tabBarController?.selectedIndex = 0
+            DispatchQueue.main.async {
+                self.tabBarController?.selectedIndex = 0
+            }
         }
         
     }
